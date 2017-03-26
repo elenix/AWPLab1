@@ -1,0 +1,22 @@
+ #waffle {
+    font:13px Arial;
+    text-align:center;
+    overflow:hidden;
+}
+
+#waffle div  {
+    width:auto;
+    text-align:left;
+    margin:1px;
+    padding:2px 5px;
+    letter-spacing:1px;
+}
+
+.clearfix {
+    margin: 20px;
+}
+
+.jumbotron{
+    padding-left: 100px;
+    padding-right: 100px;
+}

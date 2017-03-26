@@ -3,55 +3,50 @@
     <head>
         <title>Web Programming Lab test 1</title>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
-        <style>
-            #waffle {
-                font:13px Arial;
-                text-align:center;
-                overflow:hidden;
-                padding-left: 300px;
-            }
-            #waffle div  {
-                width:auto;
-                text-align:left;
-                margin:1px;
-                padding:2px 5px;
-                letter-spacing:1px;
-            }
-        </style>
+        <script src="js/pullData.js"></script>
     </head>
     <body>
+        <div class="container">
+              <div class="header clearfix">
+                  <nav>
+                  <ul class="nav nav-pills float-right">
+                    <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                  </ul>
+                </nav>
+                <h3 class="text-muted">Lab Test 1</h3>
+                  <hr class="my-4">
+              </div>
+              <div class="jumbotron">
+                <h1 class="display-3">Waffle Waffle Waffle waff...fle..</h1>
+                  <hr class="my-4">
+                    <p class="lead">Delicious Waffle!</p>
+              </div>
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-end">
+                    <li class="page-item">
+                      <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">Next</a>
+                    </li>
+                  </ul>
+                </nav>
         <div id="waffle"></div>
-        <script>
-            $(document).ready(function() {
-                $.ajax({
-                    type: 'GET',
-                    url: 'xml/food_menu.xml',
-                    dataType: 'xml',
-                    success: function(xml) {
-                        $(xml).find('food').each(function() {
-                            $('#waffle').append(
-                                '<table class="table">' +
-                                '<tbody>'+
-                                '<tr>'+
-                                    '<td><img src="' +
-                                            $(this).find('image').text() + '" width="200px"></td>'+
-                                    '<td><div><b>Name: </b>' +
-                                        $(this).find('name').text() + '</div> ' +
-                                    '<div><b>Description: </b>' +
-                                        $(this).find('description').text() + '</div> ' +
-                                    '<div><b>Price: </b>' +
-                                        $(this).find('price').text() + '</div> ' +
-                                    '<div><b>Calories: </b>' +
-                                        $(this).find('calories').text() + '</div></td> ' +
-                                '<tr>'+
-                                '</tbody>'+
-                                '</table>');
-                        });
-                    }
-                });
-            });
-        </script>
+        </div>
+      </footer>
+
     </body>
 </html>
